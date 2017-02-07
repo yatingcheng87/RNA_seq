@@ -1,0 +1,13 @@
+species="grcm38-mouse"
+samplelist=(\
+~/trial/DMSO1.fastq.bz2 \
+~/trial/DMSO2.fastq.bz2 \
+~/trial/DMSO3.fastq.bz2 \
+~/trial/Indole1.fastq.bz2 \
+~/trial/Indole2.fastq.bz2 \
+~/trial/Indole3.fastq.bz2 \
+~/trial/TCDD1.fastq.bz2 \
+~/trial/TCDD2.fastq.bz2 \
+~/trial/TCDD3.fastq.bz2 \
+)
+
