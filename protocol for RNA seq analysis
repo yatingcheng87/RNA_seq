@@ -1,19 +1,30 @@
 # the procedure of using the sequencing pipeline of Chapkin's lab. 
 # data input and dataset pre processing and list files
  ./main-scripts/concat.sh /mnt/nas/Organoid-data-04242014/FastqFile ../trial
- [cyating@nfsc-oracle-tamu-edu ~]$ ll trial
-total 7056744
--rw-rw-r--. 1 cyating cyating 835702092 Jan 23 18:06 DMSO1.fastq.bz2
--rw-rw-r--. 1 cyating cyating 812051562 Jan 23 18:06 DMSO2.fastq.bz2
--rw-rw-r--. 1 cyating cyating 776889612 Jan 23 18:07 DMSO3.fastq.bz2
--rw-rw-r--. 1 cyating cyating 843863868 Jan 23 18:07 Indole1.fastq.bz2
--rw-rw-r--. 1 cyating cyating 697129779 Jan 23 18:08 Indole2.fastq.bz2
--rw-rw-r--. 1 cyating cyating 787016647 Jan 23 18:08 Indole3.fastq.bz2
--rw-rw-r--. 1 cyating cyating       159 Jan 23 18:27 list.txtd
--rw-rw-r--. 1 cyating cyating 755011545 Jan 23 18:09 TCDD1.fastq.bz2
--rw-rw-r--. 1 cyating cyating 871778430 Jan 23 18:09 TCDD2.fastq.bz2
--rw-rw-r--. 1 cyating cyating 84633569555 Jan 23 18:10 TCDD3.fastq.bz2
+# [cyating@nfsc-oracle-tamu-edu ~]$ ll trial
+#total 7056744
+#-rw-rw-r--. 1 cyating cyating 835702092 Jan 23 18:06 DMSO1.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating 812051562 Jan 23 18:06 DMSO2.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating 776889612 Jan 23 18:07 DMSO3.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating 843863868 Jan 23 18:07 Indole1.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating 697129779 Jan 23 18:08 Indole2.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating 787016647 Jan 23 18:08 Indole3.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating       159 Jan 23 18:27 list.txtd
+#-rw-rw-r--. 1 cyating cyating 755011545 Jan 23 18:09 TCDD1.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating 871778430 Jan 23 18:09 TCDD2.fastq.bz2
+#-rw-rw-r--. 1 cyating cyating 84633569555 Jan 23 18:10 TCDD3.fastq.bz2
 
  
 # map reads to the genome
+main-scripts/map.sh lists/ahr-yating 2> err.log | tee out.log
+
+#analysis summarization
+main-scripts/summary.py lists/ahr-yating keys/ahr-yating.csv
+
+# differential analysis will be carried out in the R interface
+
+I will compare Indole vs DMSO, TCDD vs DMSO
+
+
+
 
