@@ -43,11 +43,9 @@ dfss = sapply(dfs, colMeans)
 Indole_dmso <- glmLRT(fit, contrast=c(-1,1,0))
 TCDD_dmso <- glmLRT(fit, contrast=c(-1,0,1))
 
+##########################plotSmear##############################################
 topTags(TCDD_dmso,n=10)
-dt_significant <- decideTestsDGE( TCDD_dmso, adjust.method="BH", p.value=0.05)
-vctr_names_sig <- rownames(y)[ as.logical( dt_significant )]
-plotSmear( TCDD_dmso, de.tags = vctr_names_sig )
-abline( h = c( -2, 2 ), col = "blue")
+
 dt_significant
 vctr_names_sig
 
@@ -56,7 +54,7 @@ vctr_names_sig <- rownames(y)[ as.logical( dt_significant )]
 plotSmear( TCDD_dmso, de.tags = vctr_names_sig )
 abline( h = c( -2, 2 ), col = "blue")
 
-
+##########################heatmap##############################################
 vctr_names_top <- rownames( topTags(TCDD_dmso, n = 30 ) )
 vctr_names_top <- c( vctr_names_top, rownames( topTags( TCDD_dmso, n = 30 ) ) )
 vctr_names_top <- unique( c( vctr_names_top, rownames( topTags( TCDD_dmso, n = 30 ) ) ) )
