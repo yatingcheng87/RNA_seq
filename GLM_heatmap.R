@@ -43,6 +43,9 @@ dfss = sapply(dfs, colMeans)
 Indole_dmso <- glmLRT(fit, contrast=c(-1,1,0))
 TCDD_dmso <- glmLRT(fit, contrast=c(-1,0,1))
 
+p = plotMDS(y)
+p = plotBCV(y)
+
 ##########################plotSmear##############################################
 topTags(TCDD_dmso,n=10)
 
